@@ -26,10 +26,24 @@ class AdminController <ApplicationController
   end
 
   def one_twenty
+    @rolls = []
+
+    1.times do
+      die = rand(1..20)
+  
+      @rolls.push(die)
+    end  
     render({:template => "pages_templates/1d20"})
   end
 
   def five_four
+    @rolls = []
+
+    5.times do
+      die = rand(1..4)
+  
+      @rolls.push(die)
+    end  
     render({:template => "pages_templates/5d4"})
   end
 end
