@@ -1,6 +1,6 @@
 class AdminController <ApplicationController
   def show
-
+    render({:template => "pages_templates/home"})
   end
 
   def two_six
