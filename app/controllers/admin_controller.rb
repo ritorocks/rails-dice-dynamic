@@ -46,4 +46,18 @@ class AdminController <ApplicationController
     end  
     render({:template => "pages_templates/5d4"})
   end
+
+  def dynamic
+    @num_dice = params.fetch("number_dice").to_i
+    @num_sides = params.fetch("number_sides").to_i
+
+    @rolls = []
+
+    @num_dice.times do
+      die = rand(1..@num_sides)
+
+      @rolls.push(die)
+    end
+    render({:template => "pages_templates/dynamic"})
+  end
 end
